@@ -1,0 +1,454 @@
+openapi: 3.0.0
+info:
+  title: api-swapi
+  description: Esta API permite traer información de la pelicula StarWars y productos
+  contact:
+    name: Janeth Elva Vargas Herhuay
+    email: vjanethh@gmail.com
+  version: v1
+servers:
+- url: https://virtserver.swaggerhub.com/janeth182/api-swapi/v1
+  description: SwaggerHub API Auto Mocking
+- url: https://xibwsiih87.execute-api.us-east-1.amazonaws.com/dev
+  description: SwaggerHub API Auto Mocking
+paths:
+  /naves/{id}:
+    get:
+      description: Permite obtener listado de naves de la pelicula StarWars
+      operationId: navesIdGET
+      parameters:
+      - name: id
+        in: path
+        description: codigo de la nave
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: number
+          example: 2
+      responses:
+        "200":
+          description: OK
+          content:
+            application-json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/inline_response_200'
+                x-content-type: application-json
+      x-swagger-router-controller: Default
+  /recursos:
+    get:
+      description: Permite obtener el listado de los recursos relacionados a la pelicula
+        StarWars
+      operationId: recursosGET
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/inline_response_200_1'
+                x-content-type: application/json
+      x-swagger-router-controller: Default
+  /peliculas/{id}:
+    get:
+      description: Permite obtener listado de las peliculas de StarWars
+      operationId: peliculasIdGET
+      parameters:
+      - name: id
+        in: path
+        description: codigo de la pelicula
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: number
+          example: 2
+      responses:
+        "200":
+          description: OK
+          content:
+            application-json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/inline_response_200_2'
+                x-content-type: application-json
+      x-swagger-router-controller: Default
+  /personas/{id}:
+    get:
+      description: Permite obtener listado de los personajes de la pelicula StarWars
+      operationId: personasIdGET
+      parameters:
+      - name: id
+        in: path
+        description: codigo del personaje
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: number
+          example: 2
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/inline_response_200_3'
+                x-content-type: application/json
+      x-swagger-router-controller: Default
+  /planetas/{id}:
+    get:
+      description: Permite obtener listado de los planetas de la pelicula StarWars
+      operationId: planetasIdGET
+      parameters:
+      - name: id
+        in: path
+        description: codigo del planeta
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: number
+          example: 1
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/inline_response_200_4'
+                x-content-type: application/json
+      x-swagger-router-controller: Default
+  /productos:
+    get:
+      description: Permite obtener el listado de los productos
+      operationId: productosGET
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/inline_response_200_5'
+                x-content-type: application/json
+      x-swagger-router-controller: Default
+  /agregarProducto:
+    post:
+      summary: Registrar Nuevo Producto
+      operationId: agregarProductoPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/body'
+      responses:
+        "200":
+          description: OK
+      x-swagger-router-controller: Default
+components:
+  schemas:
+    inline_response_200:
+      properties:
+        nombre:
+          type: string
+        modelo:
+          type: string
+        fabricante:
+          type: string
+        costo_en_credito:
+          type: number
+        longitud:
+          type: number
+        velocidad_max_atmosferica:
+          type: number
+        tripulacion:
+          type: string
+        pasajeros:
+          type: number
+        capacidad_carga:
+          type: number
+        consumibles:
+          type: string
+        calificacion_hiperimpulsor:
+          type: string
+        mglt:
+          type: number
+        clase_nave_estelar:
+          type: string
+        pilotos:
+          type: string
+        peliculas:
+          type: string
+        creado:
+          type: string
+        editado:
+          type: string
+        url:
+          type: string
+        mensaje:
+          type: string
+      example:
+        clase_nave_estelar: clase_nave_estelar
+        velocidad_max_atmosferica: 1.46581298050294517310021547018550336360931396484375
+        peliculas: peliculas
+        pasajeros: 5.962133916683182377482808078639209270477294921875
+        nombre: nombre
+        modelo: modelo
+        url: url
+        costo_en_credito: 0.80082819046101150206595775671303272247314453125
+        pilotos: pilotos
+        capacidad_carga: 5.63737665663332876420099637471139430999755859375
+        mglt: 2.3021358869347654518833223846741020679473876953125
+        longitud: 6.02745618307040320615897144307382404804229736328125
+        creado: creado
+        editado: editado
+        calificacion_hiperimpulsor: calificacion_hiperimpulsor
+        fabricante: fabricante
+        mensaje: mensaje
+        tripulacion: tripulacion
+        consumibles: consumibles
+    inline_response_200_1:
+      properties:
+        peliculas:
+          type: string
+        personas:
+          type: string
+        planetas:
+          type: string
+        especies:
+          type: string
+        naves_estelares:
+          type: string
+        vehiculos:
+          type: string
+        mensaje:
+          type: string
+      example:
+        planetas: planetas
+        naves_estelares: naves_estelares
+        peliculas: peliculas
+        especies: especies
+        mensaje: mensaje
+        personas: personas
+        vehiculos: vehiculos
+    inline_response_200_2:
+      properties:
+        titulo:
+          type: string
+        episodio_id:
+          type: number
+        rastreo_apertura:
+          type: string
+        director:
+          type: string
+        productora:
+          type: string
+        fecha_lanzamiento:
+          type: string
+        personajes:
+          type: array
+          example: []
+        planetas:
+          type: array
+          example: []
+        naves:
+          type: array
+          example: []
+        vehiculos:
+          type: array
+          example: []
+        especies:
+          type: array
+          example: []
+        creado:
+          type: string
+        editado:
+          type: string
+        url:
+          type: string
+        mensaje:
+          type: string
+      example:
+        episodio_id: 0.80082819046101150206595775671303272247314453125
+        planetas: []
+        fecha_lanzamiento: fecha_lanzamiento
+        director: director
+        especies: []
+        titulo: titulo
+        naves: []
+        vehiculos: []
+        url: url
+        rastreo_apertura: rastreo_apertura
+        productora: productora
+        creado: creado
+        personajes: []
+        editado: editado
+        mensaje: mensaje
+    inline_response_200_3:
+      properties:
+        nombre:
+          type: string
+        alto:
+          type: number
+        masa:
+          type: number
+        color_pelo:
+          type: string
+        color_ojos:
+          type: string
+        anio_nacimiento:
+          type: number
+        genero:
+          type: string
+        mundo_natal:
+          type: string
+        peliculas:
+          type: array
+          example: []
+        especies:
+          type: array
+          example: []
+        vehiculo:
+          type: array
+          example: []
+        nave_estelar:
+          type: array
+          example: []
+        creado:
+          type: string
+        editado:
+          type: string
+        url:
+          type: string
+        mensaje:
+          type: string
+      example:
+        mundo_natal: mundo_natal
+        peliculas: []
+        color_ojos: color_ojos
+        especies: []
+        color_pelo: color_pelo
+        nave_estelar: []
+        alto: 0.80082819046101150206595775671303272247314453125
+        vehiculo: []
+        anio_nacimiento: 1.46581298050294517310021547018550336360931396484375
+        nombre: nombre
+        url: url
+        masa: 6.02745618307040320615897144307382404804229736328125
+        creado: creado
+        editado: editado
+        genero: genero
+        mensaje: mensaje
+    inline_response_200_4:
+      properties:
+        nombre:
+          type: string
+        periodo_rotacion:
+          type: number
+        periodo_orbital:
+          type: number
+        diametro:
+          type: number
+        gravedad:
+          type: string
+        terreno:
+          type: string
+        superficie_agua:
+          type: number
+        poblacion:
+          type: number
+        residentes:
+          type: array
+          example: []
+        peliculas:
+          type: array
+          example: []
+        creado:
+          type: string
+        editado:
+          type: string
+        url:
+          type: string
+      example:
+        diametro: 1.46581298050294517310021547018550336360931396484375
+        peliculas: []
+        nombre: nombre
+        periodo_rotacion: 0.80082819046101150206595775671303272247314453125
+        url: url
+        residentes: []
+        gravedad: gravedad
+        creado: creado
+        editado: editado
+        superficie_agua: 5.962133916683182377482808078639209270477294921875
+        periodo_orbital: 6.02745618307040320615897144307382404804229736328125
+        poblacion: 5.63737665663332876420099637471139430999755859375
+        terreno: terreno
+    inline_response_200_5:
+      properties:
+        idproducto:
+          type: string
+        nombre_producto:
+          type: string
+        id_proveedor:
+          type: number
+        id_categoria:
+          type: number
+        precio:
+          type: number
+        stock:
+          type: number
+        estado:
+          type: number
+        fecha_creacion:
+          type: string
+        fecha_actualizacion:
+          type: string
+      example:
+        id_proveedor: 0.80082819046101150206595775671303272247314453125
+        precio: 1.46581298050294517310021547018550336360931396484375
+        estado: 5.63737665663332876420099637471139430999755859375
+        id_categoria: 6.02745618307040320615897144307382404804229736328125
+        nombre_producto: nombre_producto
+        fecha_actualizacion: fecha_actualizacion
+        stock: 5.962133916683182377482808078639209270477294921875
+        fecha_creacion: fecha_creacion
+        idproducto: idproducto
+    body:
+      type: object
+      properties:
+        nombre_producto:
+          type: string
+          description: Nombre del producto
+        id_proveedor:
+          type: number
+          description: id del proveedor
+        id_categoria:
+          type: number
+          description: id de categoria
+        precio:
+          type: number
+          description: Precio del producto
+        stock:
+          type: number
+          description: stock del producto
+        estado:
+          type: number
+          description: estado del producto 1 activo 0 inactivo
+      example:
+        nombre_producto: Leche Ideal 200ml
+        id_proveedor: 10
+        id_categoria: 1
+        precio: 10
+        stock: 150
+        estado: 1
