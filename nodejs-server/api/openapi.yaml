@@ -9,7 +9,7 @@ info:
 servers:
 - url: https://virtserver.swaggerhub.com/janeth182/api-swapi/v1
   description: SwaggerHub API Auto Mocking
-- url: https://xibwsiih87.execute-api.us-east-1.amazonaws.com/dev
+- url: https://b8ks7ubxzj.execute-api.us-east-1.amazonaws.com/dev
   description: SwaggerHub API Auto Mocking
 paths:
   /naves/{id}:
@@ -151,7 +151,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/body'
+              $ref: '#/components/schemas/agregarProducto_body'
       responses:
         "200":
           description: OK
@@ -200,17 +200,17 @@ components:
           type: string
       example:
         clase_nave_estelar: clase_nave_estelar
-        velocidad_max_atmosferica: 1.4658129805029452
+        velocidad_max_atmosferica: 1.46581298050294517310021547018550336360931396484375
         peliculas: peliculas
-        pasajeros: 5.962133916683182
+        pasajeros: 5.962133916683182377482808078639209270477294921875
         nombre: nombre
         modelo: modelo
         url: url
-        costo_en_credito: 0.8008281904610115
+        costo_en_credito: 0.80082819046101150206595775671303272247314453125
         pilotos: pilotos
-        capacidad_carga: 5.637376656633329
-        mglt: 2.3021358869347655
-        longitud: 6.027456183070403
+        capacidad_carga: 5.63737665663332876420099637471139430999755859375
+        mglt: 2.3021358869347654518833223846741020679473876953125
+        longitud: 6.02745618307040320615897144307382404804229736328125
         creado: creado
         editado: editado
         calificacion_hiperimpulsor: calificacion_hiperimpulsor
@@ -280,7 +280,7 @@ components:
         mensaje:
           type: string
       example:
-        episodio_id: 0.8008281904610115
+        episodio_id: 0.80082819046101150206595775671303272247314453125
         planetas: []
         fecha_lanzamiento: fecha_lanzamiento
         director: director
@@ -340,12 +340,12 @@ components:
         especies: []
         color_pelo: color_pelo
         nave_estelar: []
-        alto: 0.8008281904610115
+        alto: 0.80082819046101150206595775671303272247314453125
         vehiculo: []
-        anio_nacimiento: 1.4658129805029452
+        anio_nacimiento: 1.46581298050294517310021547018550336360931396484375
         nombre: nombre
         url: url
-        masa: 6.027456183070403
+        masa: 6.02745618307040320615897144307382404804229736328125
         creado: creado
         editado: editado
         genero: genero
@@ -381,18 +381,18 @@ components:
         url:
           type: string
       example:
-        diametro: 1.4658129805029452
+        diametro: 1.46581298050294517310021547018550336360931396484375
         peliculas: []
         nombre: nombre
-        periodo_rotacion: 0.8008281904610115
+        periodo_rotacion: 0.80082819046101150206595775671303272247314453125
         url: url
         residentes: []
         gravedad: gravedad
         creado: creado
         editado: editado
-        superficie_agua: 5.962133916683182
-        periodo_orbital: 6.027456183070403
-        poblacion: 5.637376656633329
+        superficie_agua: 5.962133916683182377482808078639209270477294921875
+        periodo_orbital: 6.02745618307040320615897144307382404804229736328125
+        poblacion: 5.63737665663332876420099637471139430999755859375
         terreno: terreno
     inline_response_200_5:
       properties:
@@ -415,16 +415,16 @@ components:
         fecha_actualizacion:
           type: string
       example:
-        id_proveedor: 0.8008281904610115
-        precio: 1.4658129805029452
-        estado: 5.637376656633329
-        id_categoria: 6.027456183070403
+        id_proveedor: 0.80082819046101150206595775671303272247314453125
+        precio: 1.46581298050294517310021547018550336360931396484375
+        estado: 5.63737665663332876420099637471139430999755859375
+        id_categoria: 6.02745618307040320615897144307382404804229736328125
         nombre_producto: nombre_producto
         fecha_actualizacion: fecha_actualizacion
-        stock: 5.962133916683182
+        stock: 5.962133916683182377482808078639209270477294921875
         fecha_creacion: fecha_creacion
         idproducto: idproducto
-    body:
+    agregarProducto_body:
       type: object
       properties:
         nombre_producto:
